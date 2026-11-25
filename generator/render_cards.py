@@ -138,6 +138,7 @@ KINDS = dict(cover=cover, body=body, cta=cta)
 
 async def main(spec_path, out_dir):
     spec = json.load(open(spec_path))
+    out_dir = os.path.abspath(out_dir)
     os.makedirs(out_dir, exist_ok=True)
     fonts = f'''<style>body{{margin:0}}
 @font-face{{font-family:'Space Grotesk';font-weight:500;src:url(file://{HERE}/fonts/space-grotesk-latin-500-normal.woff2)}}
